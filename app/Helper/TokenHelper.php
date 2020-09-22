@@ -30,7 +30,7 @@ class TokenHelper {
         $domain = url('/');
         $token_str = "";
         $date = date('Y-m-d H:i:s');
-        if($domain == "http://speakin.localhost" OR $domain == "https://speakin.co" OR $domain == "https://www.speakin.co" OR $domain == "https://www.speakin.co/" OR $domain == "speakin.co" OR $domain == "www.speakin.co" OR $domain == "http://stage.speakin.co"){
+        if($domain == "http://speakin.localhost" OR $domain == "https://doamin.com" OR $domain == "https://www.doamin.com" OR $domain == "https://www.doamin.com/" OR $domain == "doamin.com" OR $domain == "www.doamin.com" OR $domain == "http://stage.doamin.com"){
             $token_str .= $domain;
         }else{
             return array();
@@ -103,7 +103,7 @@ class TokenHelper {
         $my_key = $exp[2];
         $key_val = $exp[4];
 
-        if($domain == "http://speakin.localhost" OR $domain == "https://speakin.co" OR $domain == "https://www.speakin.co" OR $domain == "https://www.speakin.co/" OR $domain == "speakin.co" OR $domain == "www.speakin.co" OR $domain == "http://stage.speakin.co"){
+        if($domain == "http://speakin.localhost" OR $domain == "https://doamin.com" OR $domain == "https://www.doamin.com" OR $domain == "https://www.doamin.com/" OR $domain == "doamin.com" OR $domain == "www.doamin.com" OR $domain == "http://stage.doamin.com"){
               
         }else{
             return false;
