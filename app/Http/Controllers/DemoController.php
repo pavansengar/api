@@ -46,11 +46,7 @@ class DemoController extends Controller
      */
     public function htmltopdf(Request $request)
     {
-        
-        
-        
         echo $encrypted = Crypt::encryptString('Hello world.');
-        
         echo $decrypted = Crypt::decryptString($encrypted);
         die();
         $upload_dir = "expert_profile";
@@ -138,65 +134,10 @@ class DemoController extends Controller
      */
     public function saveJqueryImageUpload(Request $request)
     {
-        
-        
         $data = SHelpers::upload_crop_image($request, "profile_picture", "jpg,jpeg,png,gif", $file_size = 2, 'upload', true);
-        
-        /*$data = $request->profile_picture;
-        list($type, $data) = explode(';', $data);
-        list(, $data)      = explode(',', $data);
-        $data = base64_decode($data);
-        $image_name= time().'.png';
-        $path = storage_path() . "/upload/" . $image_name;
-        file_put_contents($path, $data);*/
         return $data;
         print_r($data); die();
-        
-        
-        
-        /*list($type, $data) = explode(';', $data);
-        list(, $data)      = explode(',', $data);
-        $data = base64_decode($data);
-        $image_name= time().'.png';
-        $path = public_path() . "/upload/" . $image_name;
-        file_put_contents($path, $data);*/
-        //return response()->json(['success'=>'done']);
-        
-       
-        
-        /*$validator = Validator::make($request->all(), [
-            'profile_picture' => 'required|image|max:1000',
-        ]);
-        
-        if ($validator->fails()) {
-            
-            return $validator->errors();
-        }
-        
-        $status = "";
-        
-        if ($request->hasFile('profile_picture')) {
-            $image = $request->file('profile_picture');
-            // Rename image
-            $filename = time().'.'.$image->guessExtension();
-            
-            $path = $request->file('profile_picture')->storeAs(
-                'profile_pictures', $filename
-                );
-            
-            $status = "uploaded";
-        }*/
-        
-        //$path_parts = pathinfo($_FILES['profile_picture']["name"]);
-        //print_r($path_parts);
-        //echo $_FILES['profile_picture']["name"];
-        //die();
-        
-        //$extension = $path_parts['extension'];
-        //$filename = strtolower($path_parts['filename']);
-        
         print_r($_FILES); die();
-        
         $status = SHelpers::upload_file($request,'profile_picture','jpg,jpeg,png,gif',2,'expert',false,true,true);
         print_r($status);
         //return response($status,200);
@@ -923,16 +864,6 @@ class DemoController extends Controller
         $calendarListEntry = $service->calendarList->get('speakin.co.in_m5chrr27ce6a2tbb7b0tcic3mg@group.calendar.google.com');
         
         echo $calendarListEntry->getSummary();
-        
-        /*$optParams = array('filter' => 'free-ebooks');
-        $results = $service->volumes->listVolumes('Henry David Thoreau', $optParams);
-        
-        foreach ($results->getItems() as $item) {
-            echo $item['volumeInfo']['title'], "<br /> \n";
-        }*/
-        
-       /* echo"<pre>";
-        print_r($events);*/
     }
     public function webinar_report(Request $request)
     {
